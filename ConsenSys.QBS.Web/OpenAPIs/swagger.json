@@ -1,0 +1,1957 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Azure",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://management.onquorum.net",
+      "description": "Quorum Blockchain Service Management API"
+    }
+  ],
+  "paths": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/ConsenSys.Blockchain/blockchainMembers/{blockchainMemberName}": {
+      "get": {
+        "tags": [
+          "BlockchainMembers"
+        ],
+        "summary": "Get details about a blockchain member.",
+        "operationId": "GetBlockchainMember",
+        "parameters": [
+          {
+            "name": "subscriptionId",
+            "in": "path",
+            "description": "The subscription Id which uniquely identifies the Microsoft Azure subscription. The subscription ID is part of the URI for every service call.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "resourceGroupName",
+            "in": "path",
+            "description": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "blockchainMemberName",
+            "in": "path",
+            "description": "Blockchain member name.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockchainMember"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockchainMember"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockchainMember"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "BlockchainMembers"
+        ],
+        "summary": "Update a blockchain member.",
+        "operationId": "UpdateBlockchainMember",
+        "parameters": [
+          {
+            "name": "subscriptionId",
+            "in": "path",
+            "description": "The subscription Id which uniquely identifies the Microsoft Azure subscription. The subscription ID is part of the URI for every service call.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "resourceGroupName",
+            "in": "path",
+            "description": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "blockchainMemberName",
+            "in": "path",
+            "description": "Blockchain member name.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request body",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Operation"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Operation"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Operation"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Operation"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockchainMember"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockchainMember"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockchainMember"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/ConsenSys.Blockchain/blockchainMembers": {
+      "get": {
+        "tags": [
+          "BlockchainMembers"
+        ],
+        "summary": "Lists the blockchain members for a resource group.",
+        "operationId": "ListBlockchainMembersInResourceGroup",
+        "parameters": [
+          {
+            "name": "subscriptionId",
+            "in": "path",
+            "description": "The subscription Id which uniquely identifies the Microsoft Azure subscription. The subscription ID is part of the URI for every service call.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "resourceGroupName",
+            "in": "path",
+            "description": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BlockchainMember"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BlockchainMember"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BlockchainMember"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/providers/ConsenSys.Blockchain/blockchainMembers": {
+      "get": {
+        "tags": [
+          "BlockchainMembers"
+        ],
+        "summary": "Lists the blockchain members for a subscription.",
+        "operationId": "ListBlockchainMembersInSubscription",
+        "parameters": [
+          {
+            "name": "subscriptionId",
+            "in": "path",
+            "description": "The subscription Id which uniquely identifies the Microsoft Azure subscription. The subscription ID is part of the URI for every service call.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BlockchainMember"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BlockchainMember"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BlockchainMember"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/ConsenSys.Blockchain/blockchainMembers/{blockchainMemberName}/listApiKeys": {
+      "post": {
+        "tags": [
+          "BlockchainMembers"
+        ],
+        "summary": "Lists the API keys for a blockchain member.",
+        "operationId": "ListBlockchainMemberApiKeys",
+        "parameters": [
+          {
+            "name": "subscriptionId",
+            "in": "path",
+            "description": "The subscription Id which uniquely identifies the Microsoft Azure subscription. The subscription ID is part of the URI for every service call.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "resourceGroupName",
+            "in": "path",
+            "description": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "blockchainMemberName",
+            "in": "path",
+            "description": "Blockchain member name.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKeyCollection"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKeyCollection"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKeyCollection"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/ConsenSys.Blockchain/blockchainMembers/{blockchainMemberName}/regenerateApiKeys": {
+      "post": {
+        "tags": [
+          "BlockchainMembers"
+        ],
+        "summary": "Regenerate the API keys for a blockchain member.",
+        "operationId": "RegenerateBlockchainMemberApiKeys",
+        "parameters": [
+          {
+            "name": "subscriptionId",
+            "in": "path",
+            "description": "The subscription Id which uniquely identifies the Microsoft Azure subscription. The subscription ID is part of the URI for every service call.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "resourceGroupName",
+            "in": "path",
+            "description": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "blockchainMemberName",
+            "in": "path",
+            "description": "Blockchain member name.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request body",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListRegenerateApiKeysRequestBody"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListRegenerateApiKeysRequestBody"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListRegenerateApiKeysRequestBody"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListRegenerateApiKeysRequestBody"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKeyCollection"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKeyCollection"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKeyCollection"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/ConsenSys.Blockchain/blockchainMembers/{blockchainMemberName}/consortiumMembers": {
+      "get": {
+        "tags": [
+          "ConsortiumManagement"
+        ],
+        "summary": "List consortium members.",
+        "operationId": "ListMembers",
+        "parameters": [
+          {
+            "name": "subscriptionId",
+            "in": "path",
+            "description": "Subscription Id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "resourceGroupName",
+            "in": "path",
+            "description": "Resource group of their Managed Application",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "blockchainMemberName",
+            "in": "path",
+            "description": "Member name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "includeDeleted",
+            "in": "query",
+            "description": "Set to true to also see members that have had their Azure resources deleted, defaults to false",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "includeRemoved",
+            "in": "query",
+            "description": "Set to true to also see members that have left the consortium, defaults to false",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConsortiumMemberCollection"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConsortiumMemberCollection"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConsortiumMemberCollection"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/ConsenSys.Blockchain/blockchainMembers/{blockchainMemberName}/consortiumMembers/{memberNameToRemove}": {
+      "delete": {
+        "tags": [
+          "ConsortiumManagement"
+        ],
+        "summary": "Remove a member from a consortium.",
+        "description": "<br>As an administrator, remove a member from the consortium you are part of.\r\n<br>The leaving member will no longer be part of the consortium, but will retain all their data unless they choose to delete their managed app.",
+        "operationId": "RemoveMember",
+        "parameters": [
+          {
+            "name": "subscriptionId",
+            "in": "path",
+            "description": "Your Subscription Id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "resourceGroupName",
+            "in": "path",
+            "description": "Resource group of your Managed Application",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "blockchainMemberName",
+            "in": "path",
+            "description": "Your Member name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "memberNameToRemove",
+            "in": "path",
+            "description": "Member name to remove from the consortium. Use API endpoint GetConsortiumMembers to see a list of member names.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Member removal request has been accepted"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{inviterSubscriptionId}/resourceGroups/{inviterResourceGroupName}/providers/ConsenSys.Blockchain/blockchainMembers/{inviterBlockchainMemberName}/invites": {
+      "post": {
+        "tags": [
+          "Invites"
+        ],
+        "summary": "Create an invite.",
+        "description": "<br>Create an invite to join an existing consortium. More information [is available here](https://consensys.net/docs/qbs/en/latest/Concepts/Consortium-Management/).\r\n<br>Invites are created by an inviter and sent to an invitee. You will need to know the invitee's subscription id and contact email.",
+        "operationId": "CreateInvite",
+        "parameters": [
+          {
+            "name": "inviterSubscriptionId",
+            "in": "path",
+            "description": "Inviter Subscription Id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "inviterResourceGroupName",
+            "in": "path",
+            "description": "Inviter Resource group of their Managed Application",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "inviterBlockchainMemberName",
+            "in": "path",
+            "description": "Inviter Member name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "<br>The invite request body contains the invitee details: invitee subscription id, invitee email, invitee role (`OWNER` or `MEMBER`) and number of days before invite expires.\r\n<br>Optionally, you can add your own inviter email to get cc'd a copy of the invite. To leave the inviter email blank, type the value `null`.",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InviteCreateRequestBody"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InviteCreateRequestBody"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InviteCreateRequestBody"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InviteCreateRequestBody"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Invite"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Invite"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Invite"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Invites"
+        ],
+        "summary": "List invites.",
+        "description": "<br>List invites for an existing consortium. All inviter members with the Owner role can list any invite for the consortium.",
+        "operationId": "ListInvites",
+        "parameters": [
+          {
+            "name": "inviterSubscriptionId",
+            "in": "path",
+            "description": "Inviter Subscription Id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "inviterResourceGroupName",
+            "in": "path",
+            "description": "Inviter Resource group of their Managed Application",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "inviterBlockchainMemberName",
+            "in": "path",
+            "description": "Inviter Member name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/InviteCollection"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InviteCollection"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InviteCollection"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{inviterSubscriptionId}/resourceGroups/{inviterResourceGroupName}/providers/ConsenSys.Blockchain/blockchainMembers/{inviterBlockchainMemberName}/invites/{inviteCode}": {
+      "delete": {
+        "tags": [
+          "Invites"
+        ],
+        "summary": "Revoke an invite.",
+        "description": "<br>Revoke an invite to join an existing consortium. All inviter members with the Owner role can revoke any invite for the consortium.",
+        "operationId": "RevokeInvite",
+        "parameters": [
+          {
+            "name": "inviterSubscriptionId",
+            "in": "path",
+            "description": "Inviter Subscription Id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "inviterResourceGroupName",
+            "in": "path",
+            "description": "Inviter Resource group of their Managed Application",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "inviterBlockchainMemberName",
+            "in": "path",
+            "description": "Inviter Member name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "inviteCode",
+            "in": "path",
+            "description": "Invite Code issued to the prospective new Member (use List Invites API to see full list)",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/subscriptions/{inviteeSubscriptionId}/providers/ConsenSys.Blockchain/isInviteCodeValid/{inviteCode}": {
+      "get": {
+        "tags": [
+          "Invites"
+        ],
+        "summary": "Validate an invite.",
+        "description": "<br>Validate an invite code for an invitee's subscriptionId.",
+        "operationId": "IsInviteCodeValidForSubscription",
+        "parameters": [
+          {
+            "name": "inviteeSubscriptionId",
+            "in": "path",
+            "description": "The invitee's subscription Id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "inviteCode",
+            "in": "path",
+            "description": "The invite code that will be checked for validity with the invitee's subscription Id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/InviteCheckResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InviteCheckResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InviteCheckResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/providers/ConsenSys.Blockchain/locations/{locationName}/listConsortiums": {
+      "get": {
+        "tags": [
+          "Locations"
+        ],
+        "summary": "Lists the available consortiums for a subscription.",
+        "operationId": "ListConsortiums",
+        "parameters": [
+          {
+            "name": "subscriptionId",
+            "in": "path",
+            "description": "The subscription Id which uniquely identifies the Microsoft Azure subscription. The subscription ID is part of the URI for every service call.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "locationName",
+            "in": "path",
+            "description": "Location Name.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConsortiumCollection"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConsortiumCollection"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConsortiumCollection"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/ConsenSys.Blockchain/blockchainMembers/{blockchainMemberName}/transactionNodes/{transactionNodeName}": {
+      "get": {
+        "tags": [
+          "TransactionNodes"
+        ],
+        "summary": "Get the details of the transaction node.",
+        "operationId": "GetTransactionNode",
+        "parameters": [
+          {
+            "name": "subscriptionId",
+            "in": "path",
+            "description": "The subscription Id which uniquely identifies the Microsoft Azure subscription. The subscription ID is part of the URI for every service call.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "resourceGroupName",
+            "in": "path",
+            "description": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "blockchainMemberName",
+            "in": "path",
+            "description": "Blockchain member name.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "transactionNodeName",
+            "in": "path",
+            "description": "Transaction node name.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionNode"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionNode"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionNode"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "TransactionNodes"
+        ],
+        "summary": "Update the transaction node.",
+        "operationId": "UpdateTransactionNode",
+        "parameters": [
+          {
+            "name": "subscriptionId",
+            "in": "path",
+            "description": "The subscription Id which uniquely identifies the Microsoft Azure subscription. The subscription Id is part of the URI for every service call.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "resourceGroupName",
+            "in": "path",
+            "description": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "blockchainMemberName",
+            "in": "path",
+            "description": "Blockchain member name.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "transactionNodeName",
+            "in": "path",
+            "description": "Transaction node name.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request body",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Operation"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Operation"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Operation"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Operation"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionNode"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionNode"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionNode"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/ConsenSys.Blockchain/blockchainMembers/{blockchainMemberName}/transactionNodes": {
+      "get": {
+        "tags": [
+          "TransactionNodes"
+        ],
+        "summary": "Lists the transaction nodes for a blockchain member.",
+        "operationId": "ListTransactionNodes",
+        "parameters": [
+          {
+            "name": "subscriptionId",
+            "in": "path",
+            "description": "The subscription Id which uniquely identifies the Microsoft Azure subscription. The subscription ID is part of the URI for every service call.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "resourceGroupName",
+            "in": "path",
+            "description": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "blockchainMemberName",
+            "in": "path",
+            "description": "Blockchain member name.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionNodeCollection"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionNodeCollection"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionNodeCollection"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/ConsenSys.Blockchain/blockchainMembers/{blockchainMemberName}/transactionNodes/{transactionNodeName}/listApiKeys": {
+      "get": {
+        "tags": [
+          "TransactionNodes"
+        ],
+        "summary": "List the API keys for the transaction node.",
+        "operationId": "ListTransactionNodeApiKeys",
+        "parameters": [
+          {
+            "name": "subscriptionId",
+            "in": "path",
+            "description": "The subscription Id which uniquely identifies the Microsoft Azure subscription. The subscription ID is part of the URI for every service call.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "resourceGroupName",
+            "in": "path",
+            "description": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "blockchainMemberName",
+            "in": "path",
+            "description": "Blockchain member name.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "transactionNodeName",
+            "in": "path",
+            "description": "Transaction node name.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKeyCollection"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKeyCollection"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKeyCollection"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/ConsenSys.Blockchain/blockchainMembers/{blockchainMemberName}/transactionNodes/{transactionNodeName}/regenerateApiKeys": {
+      "get": {
+        "tags": [
+          "TransactionNodes"
+        ],
+        "summary": "Regenerate the API keys for the transaction node.",
+        "operationId": "RegenerateTransactionNodeApiKeys",
+        "parameters": [
+          {
+            "name": "subscriptionId",
+            "in": "path",
+            "description": "The subscription Id which uniquely identifies the Microsoft Azure subscription. The subscription ID is part of the URI for every service call.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "resourceGroupName",
+            "in": "path",
+            "description": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "blockchainMemberName",
+            "in": "path",
+            "description": "Blockchain member name.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "transactionNodeName",
+            "in": "path",
+            "description": "Transaction node name.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKeyCollection"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKeyCollection"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiKeyCollection"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Blockchain/blockchainMembers/{blockchainMemberName}/transactionNodes/{transactionNodeName}": {
+      "put": {
+        "tags": [
+          "TransactionNodes"
+        ],
+        "summary": "Adds a transaction node.",
+        "operationId": "AddTransactionNode",
+        "parameters": [
+          {
+            "name": "subscriptionId",
+            "in": "path",
+            "description": "The subscription Id which uniquely identifies the Microsoft Azure subscription. The subscription ID is part of the URI for every service call.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "resourceGroupName",
+            "in": "path",
+            "description": "The name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "blockchainMemberName",
+            "in": "path",
+            "description": "Blockchain member name.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "transactionNodeName",
+            "in": "path",
+            "description": "Transaction node name. Name can be 64 alphanumeric characters and can include dashes and dots but not end with them",
+            "required": true,
+            "schema": {
+              "maxLength": 44,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionNode"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionNode"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionNode"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ApiKey": {
+        "type": "object",
+        "properties": {
+          "keyName": {
+            "type": "string",
+            "description": "Gets or sets the API key name.",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "description": "Gets or sets the API key value.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "API key payload which is exposed in the request/response of the resource provider."
+      },
+      "ApiKeyCollection": {
+        "type": "object",
+        "properties": {
+          "keys": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiKey"
+            },
+            "description": "Gets or sets the collection of API key.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Collection of the API key payload which is exposed in the response of the resource provider."
+      },
+      "BlockchainMember": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Fully qualified resource Id of the resource.",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "description": "The GEO location of the blockchain service.",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the resource.",
+            "nullable": true
+          },
+          "sku": {
+            "$ref": "#/components/schemas/Sku"
+          },
+          "tags": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Tags of the service which is a list of key value pairs that describes the resource.",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of the service - e.g. \"ConsenSys.Blockchain\"",
+            "nullable": true
+          },
+          "properties": {
+            "$ref": "#/components/schemas/BlockchainMemberProperties"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Payload of the blockchain member which is exposed in the request/response of the resource provider."
+      },
+      "BlockchainMemberNodesSku": {
+        "type": "object",
+        "properties": {
+          "capacity": {
+            "type": "integer",
+            "description": "Gets or sets the nodes capacity",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Payload of the blockchain member nodes Sku for a blockchain member."
+      },
+      "BlockchainMemberProperties": {
+        "type": "object",
+        "properties": {
+          "consortium": {
+            "type": "string",
+            "description": "Gets or sets the consortium for the blockchain member.",
+            "nullable": true
+          },
+          "consortiumMemberDisplayName": {
+            "type": "string",
+            "description": "Gets the display name of the member in the consortium.",
+            "nullable": true
+          },
+          "dns": {
+            "type": "string",
+            "description": "Gets the dns endpoint of the blockchain member.",
+            "nullable": true
+          },
+          "protocol": {
+            "type": "string",
+            "description": "Gets or sets the blockchain protocol.\r\n            \r\nNote: for QBS, only a value of \"Quorum\" is allowed",
+            "nullable": true
+          },
+          "provisioningState": {
+            "type": "string",
+            "description": "Gets or sets  the blockchain member provision state.",
+            "nullable": true
+          },
+          "publicKey": {
+            "type": "string",
+            "description": "Gets the public key of the blockchain member (default transaction node).",
+            "nullable": true
+          },
+          "rootContactAddress": {
+            "type": "string",
+            "description": "Gets the Ethereum root contract address of the blockchain.",
+            "nullable": true
+          },
+          "firewallRules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FirewallRule"
+            },
+            "description": "Gets or sets firewall rules",
+            "nullable": true
+          },
+          "validatorNodesSku": {
+            "$ref": "#/components/schemas/BlockchainMemberNodesSku"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The properties of the Blockchain Member"
+      },
+      "Consortium": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Gets or sets the blockchain member name.",
+            "nullable": true
+          },
+          "protocol": {
+            "type": "string",
+            "description": "Gets or sets the protocol for the consortium.\r\n            \r\nNote: for QBS, only a value of \"Quorum\" is allowed",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Consortium payload"
+      },
+      "ConsortiumCollection": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Consortium"
+            },
+            "description": "Gets or sets the collection of consortiums.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Collection of the consortium payload."
+      },
+      "ConsortiumMember": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Gets the consortium member name",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "description": "Gets the consortium member id",
+            "nullable": true
+          },
+          "region": {
+            "type": "string",
+            "description": "Region of the consortium member id",
+            "nullable": true
+          },
+          "consortiumName": {
+            "type": "string",
+            "description": "Gets the consortium name",
+            "nullable": true
+          },
+          "consortiumId": {
+            "type": "string",
+            "description": "Gets the consortium id",
+            "nullable": true
+          },
+          "role": {
+            "type": "string",
+            "description": "Gets the consortium member role",
+            "nullable": true
+          },
+          "subscriptionId": {
+            "type": "string",
+            "description": "Gets the consortium member subscription id.",
+            "nullable": true
+          },
+          "createdDate": {
+            "type": "string",
+            "description": "Gets the consortium member creation date",
+            "nullable": true
+          },
+          "deletedDate": {
+            "type": "string",
+            "description": "Gets the consortium member deletion date, this is the date the Azure resources were removed",
+            "nullable": true
+          },
+          "memberIndex": {
+            "type": "string",
+            "description": "Gets the consortium member index, always 0 for founder member.",
+            "nullable": true
+          },
+          "removedDate": {
+            "type": "string",
+            "description": "Gets the consortium removal date, this is the date the member left the consortium",
+            "nullable": true
+          },
+          "removedByMemberId": {
+            "type": "string",
+            "description": "Get the member id who removed this member from the consortium, this can be self.",
+            "nullable": true
+          },
+          "inviteCode": {
+            "type": "string",
+            "description": "Invite code used to join consortium, if any.",
+            "nullable": true
+          },
+          "invitedByMemberId": {
+            "type": "string",
+            "description": "MemberId who invited this member, this can be self for founder members.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Consortium member"
+      },
+      "ConsortiumMemberCollection": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ConsortiumMember"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Collection of consortium payload"
+      },
+      "FirewallRule": {
+        "required": [
+          "endIpAddress",
+          "ruleName",
+          "startIpAddress"
+        ],
+        "type": "object",
+        "properties": {
+          "endIpAddress": {
+            "type": "string",
+            "description": "Gets or sets the end IP address of the firewall rule range."
+          },
+          "startIpAddress": {
+            "type": "string",
+            "description": "Gets or sets the start IP address of the firewall rule range."
+          },
+          "ruleName": {
+            "maxLength": 80,
+            "minLength": 4,
+            "type": "string",
+            "description": "Gets or sets the start IP address of the firewall rule range."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Ip range for firewall rules"
+      },
+      "Invite": {
+        "type": "object",
+        "properties": {
+          "inviteCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "inviterConsortium": {
+            "type": "string",
+            "nullable": true
+          },
+          "inviterMember": {
+            "type": "string",
+            "nullable": true
+          },
+          "inviteeSubscription": {
+            "type": "string",
+            "nullable": true
+          },
+          "inviteeRole": {
+            "type": "string",
+            "nullable": true
+          },
+          "inviteeEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "inviterEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdTimestamp": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedTimestamp": {
+            "type": "string",
+            "nullable": true
+          },
+          "expiryTimestamp": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InviteCheckResponse": {
+        "type": "object",
+        "properties": {
+          "isSuccessful": {
+            "type": "boolean"
+          },
+          "errorDetails": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InviteCollection": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Invite"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Collection of the invite payload"
+      },
+      "InviteCreateRequestBody": {
+        "required": [
+          "inviteeEmail",
+          "inviteeRole",
+          "inviteeSubscriptionId"
+        ],
+        "type": "object",
+        "properties": {
+          "inviteeSubscriptionId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "inviteeEmail": {
+            "type": "string",
+            "format": "email"
+          },
+          "inviteeRole": {
+            "type": "string"
+          },
+          "expireInDays": {
+            "maximum": 365,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "inviterEmail": {
+            "type": "string",
+            "format": "email",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ListRegenerateApiKeysRequestBody": {
+        "type": "object",
+        "properties": {
+          "keyName": {
+            "type": "string",
+            "description": "Gets or sets the API key name",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "description": "Gets or sets the API key value",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request body for the List Regenerate API Keys requests"
+      },
+      "Operation": {
+        "type": "object",
+        "properties": {
+          "operationType": {
+            "$ref": "#/components/schemas/OperationType"
+          },
+          "path": {
+            "type": "string",
+            "nullable": true
+          },
+          "op": {
+            "type": "string",
+            "nullable": true
+          },
+          "from": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OperationType": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": { }
+      },
+      "Sku": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Gets or sets Sku name",
+            "nullable": true
+          },
+          "tier": {
+            "type": "string",
+            "description": "Gets or sets Sku tier",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Blockchain member Sku in payload."
+      },
+      "TransactionNode": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Fully qualified resource Id of the resource.",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "description": "Gets or sets the transaction node location.",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the resource.",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of the service - e.g. \"ConsenSys.Blockchain\"",
+            "nullable": true,
+            "readOnly": true
+          },
+          "properties": {
+            "$ref": "#/components/schemas/TransactionNodeProperties"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Payload of the transaction node which is the request/response of the resource provider."
+      },
+      "TransactionNodeCollection": {
+        "type": "object",
+        "properties": {
+          "nextLink": {
+            "type": "string",
+            "description": "Gets or sets the URL, that the client should use to fetch the next page (per server side paging).\r\nIt's null for now, added for future use.",
+            "nullable": true
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TransactionNode"
+            },
+            "description": "Gets or sets  the collection of transaction nodes.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Collection of transaction node payload which is exposed in the request/response of the resource provider."
+      },
+      "TransactionNodeProperties": {
+        "type": "object",
+        "properties": {
+          "dns": {
+            "type": "string",
+            "description": "Gets or sets the transaction node dns endpoint.",
+            "nullable": true
+          },
+          "firewallRules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FirewallRule"
+            },
+            "description": "Gets or sets the firewall rules.",
+            "nullable": true
+          },
+          "provisioningState": {
+            "type": "string",
+            "description": "Gets or sets the blockchain member provisioning state.",
+            "nullable": true
+          },
+          "publicKey": {
+            "type": "string",
+            "description": "Gets or sets the transaction node public key.",
+            "nullable": true
+          },
+          "quorumVersion": {
+            "type": "string",
+            "description": "Gets or sets the transaction node public key.",
+            "nullable": true
+          },
+          "tesseraVersion": {
+            "type": "string",
+            "description": "Gets or sets the transaction node public key.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Properties of the transaction node"
+      }
+    },
+    "securitySchemes": {
+      "AADToken": {
+        "type": "oauth2",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "https://login.microsoftonline.com/organizations/oauth2/v2.0/authorize",
+            "tokenUrl": "https://login.microsoftonline.com/organizations/oauth2/v2.0/token",
+            "scopes": {
+              "8c989307-2439-402b-86eb-5900c6132dee/.default": "Use of the QBS Api"
+            }
+          }
+        }
+      },
+      "bearer": {
+        "type": "http",
+        "scheme": "Bearer"
+      }
+    }
+  },
+  "security": [
+    {
+      "AADToken": [
+        "8c989307-2439-402b-86eb-5900c6132dee/.default"
+      ]
+    },
+    {
+      "bearer": [ ]
+    }
+  ]
+}

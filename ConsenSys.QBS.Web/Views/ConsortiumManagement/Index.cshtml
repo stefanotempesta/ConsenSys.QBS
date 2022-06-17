@@ -1,0 +1,21 @@
+﻿@model QbsApiResponseModel
+
+<h1 class="display-6">Consortiums</h1>
+<ul>
+@foreach (var c in Model.Consortiums.Value)
+{
+    <li>@c.Name, protocol: @c.Protocol</li>
+}
+</ul>
+
+<h1 class="display-6">Consortium Members</h1>
+<ul>
+@foreach (var c in Model.ConsortiumMembers.Value)
+{
+    <li>@c.Name, region: @c.Region, created on: @c.CreatedDate</li>
+}
+</ul>
+
+<hr class="m-5" />
+
+<a asp-action="Invite" class="btn btn-outline-primary">Invite Member</a>
